@@ -1,0 +1,10 @@
+---
+  - hosts: all
+    gather_facts: no
+    tasks:
+      - name: replacing the line
+        win_lineinfile:
+          path: C:\Temp\example.txt
+          backrefs: yes
+          regexp: '(^helloworld)'
+          line: '$1helloansible'
